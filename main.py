@@ -1,15 +1,18 @@
 import os
 import json
 import boto3
-from flask import Flask,request
+from flask import Flask, flash, request, redirect, url_for
 from dotenv import load_dotenv
 load_dotenv()
 app = Flask(__name__)
 #
 session = boto3.Session() #sets the profile name to use for AWS credentials
 
+
 AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
 AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
+UPLOAD_FOLDER = "./data"
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 # AWS_ACCESS_KEY_ID = "rHGojXd5axr5t1VzTQChE2VyqqZ32UVoI/Vt5SDS"
 # AWS_SECRET_ACCESS_KEY = "rHGojXd5axr5t1VzTQChE2VyqqZ32UVoI/Vt5SDS"
@@ -26,6 +29,20 @@ bedrock_model_id = "ai21.j2-ultra-v1" #set the foundation model
 
 prompt = "What is the largest city in New Hampshire?" #the prompt to send to the model
 
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    if 'file' not in request.files:
+        return 'No file part'
+    
+    file = request.files['file']
+    
+    if file.filename == '':
+        return 'No selected file'
+    
+    # Save the file to a location on the server
+    file.save('./data/' + file.filename)
+    
+    return 'File uploaded successfully'
 
 @app.route("/hello")
 def hello_world():
@@ -63,6 +80,11 @@ def prompt():
       return response_text  
 
 
+@app.route('/setup',methods = ['POST'])
+def setup():
+    if request.method == "POST":
+        difficulty = request.get_json()["difficulty"]
+        num_questions = request.get_json()["num_questions"]
 
 
 if __name__ == '__main__':
