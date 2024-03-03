@@ -34,7 +34,7 @@ const Forms = (props) => {
 
   const [input, setInput] = useState("");
 
-  var comps = topics.map((topic) => {
+  var comps = props.topics.map((topic) => {
     return(
       <Checkbox
         key={topic}

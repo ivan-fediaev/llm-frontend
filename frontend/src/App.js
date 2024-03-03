@@ -17,6 +17,7 @@ function App() {
   const [sequence, setSequence] = useState(0);
   const [pdfId, setPdfId] = useState('');
   const [questions, setQuestions] = useState([]);
+  const [topics, setTopics] = useState([]);
 
   return (
     <>
@@ -26,8 +27,8 @@ function App() {
           {!show ? (
             <div>
               <Navbar handleSequence={setSequence} handleShow={setShow}/>
-              {sequence === 0 && <UploadPage handleSequence={setSequence} handlePdfId={setPdfId}/>}
-              {sequence === 1 && <Forms handleSequence={setSequence} pdfId={pdfId} setQuestions={setQuestions}/>}
+              {sequence === 0 && <UploadPage handleSequence={setSequence} handlePdfId={setPdfId} handleTopics={setTopics}/>}
+              {sequence === 1 && <Forms handleSequence={setSequence} pdfId={pdfId} setQuestions={setQuestions} topics={topics}/>}
               {sequence === 3 && <Topics handleSequence={setSequence}/>}
               {sequence === 2 && <Carousels handleSequence={setSequence} questions={questions}/>}
             </div>

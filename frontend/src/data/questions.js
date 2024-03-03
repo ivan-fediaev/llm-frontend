@@ -1,59 +1,76 @@
+
+
 const questions = [
     {
-      question: "What is Lorem Ipsum?",
+      question: "Which law of thermodynamics states that energy cannot be created or destroyed, only transformed or transferred?",
       options: {
-        a: "random",
-        b: "text",
-        c: "latin",
-        d: "literature",
+        a: "First Law",
+        b: "Zeroth Law",
+        c: "Second Law",
+        d: "Third Law",
       },
     },
     {
-        question: "What is Machine Learning?",
+        question: "What is the term used to describe the disorder or randomness in a system?",
         options: {
-          a: "random",
-          b: "text",
-          c: "latin",
-          d: "literature",
+          a: "Heat",
+          b: "Work",
+          c: "Entropy",
+          d: "Enthalpy",
         },
     },
     {
-        question: "What is Try Catch Loop?",
+        question: "What does the Zeroth Law of Thermodynamics state?",
         options: {
-          a: "random",
-          b: "text",
-          c: "latin",
-          d: "literature",
-        },
+            a: "Heat always flows from hot to cold",
+            b: "Energy cannot be created or destroyed",
+            c: "If two systems are each in thermal equilibrium with a third, they are in thermal equilibrium with each other",
+            d: "Entropy of a perfect crystal at absolute zero is zero",
+        }
     },
     {
-        question: "What is Linear Regression?",
+        question: "What is the SI unit of temperature?",
         options: {
-          a: "random",
-          b: "text",
-          c: "latin",
-          d: "literature",
-        },
+            a: "Fahrenheit",
+            b: "Celsius",
+            c: "Kelvin",
+            d: "Rankine",
+        }
+    },
+    {
+        question: "What principle states that the energy of an isolated system is constant?",
+        options: {
+            a: "Zeroth Law",
+            b: "First Law",
+            c: "Second Law",
+            d: "Third Law",
+        }
     }
 ]
+
+
 
 // answers to the questions with explanation
 const answers = [
     {
-        answer: "b",
-        explanation: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        answer: "a",
+        explanation: "First Law of Thermodynamics states that energy cannot be created or destroyed, only transformed or transferred."
     },
     {
         answer: "c",
-        explanation: "Machine learning is the study of computer algorithms that improve automatically through experience."
+        explanation: "Entropy is the term used to describe the disorder or randomness in a system."
     },
     {
-        answer: "d",
-        explanation: "A try...catch statement marks a block of statements to try and specifies a response should an exception be thrown."
+        answer: "c",
+        explanation: "The Zeroth Law of Thermodynamics states that if two systems are each in thermal equilibrium with a third, they are in thermal equilibrium with each other."
     },
     {
-        answer: "a",
-        explanation: "Linear regression is a linear approach to modeling the relationship between a scalar response and one or more explanatory variables."
+        answer: "c",
+        explanation: "The SI unit of temperature is Kelvin."
+    },
+    {
+        answer: "b",
+        explanation: "The First Law of Thermodynamics states that the energy of an isolated system is constant."
     }
 ]
 

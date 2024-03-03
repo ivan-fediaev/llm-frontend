@@ -1,10 +1,13 @@
 import os
 import json
 import boto3
-from flask import Flask, flash, request, redirect, url_for
+from flask import Flask, flash, request, redirect, url_for, send_from_directory
 from dotenv import load_dotenv
 load_dotenv()
-app = Flask(__name__)
+from flask_cors import CORS
+
+app = Flask(__name__, static_folder="build", static_url_path="/")
+CORS(app)
 #
 session = boto3.Session() #sets the profile name to use for AWS credentials
 
@@ -29,6 +32,11 @@ bedrock = session.client(
 bedrock_model_id = "ai21.j2-ultra-v1" #set the foundation model
 
 
+# Serve React App
+@app.route("/")
+def index():
+    return app.send_static_file("index.html")
+
 @app.route('/upload', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:
@@ -42,7 +50,7 @@ def upload_file():
     # Save the file to a location on the server
     file.save('./data/' + file.filename)
     
-    with open(f"./data/{file.filename}") as file:
+    with open(f"./data/{file.filename}", encoding='utf-8') as file:
         context = file.read()
         print("working")
         body = json.dumps({
@@ -65,7 +73,7 @@ def upload_file():
         response_text = response_body.get("completions")[0].get("data").get("text")
         context = response_text.split(",")
         return response_text.split(",")[:5]
-
+        
 
 
     return 'File uploaded successfully'
@@ -118,4 +126,4 @@ def setup():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080)
+    app.run(host="localhost", port=8080)
