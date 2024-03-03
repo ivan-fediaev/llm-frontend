@@ -4,7 +4,10 @@ import boto3
 from flask import Flask, flash, request, redirect, url_for
 from dotenv import load_dotenv
 load_dotenv()
+from flask_cors import CORS
+
 app = Flask(__name__)
+CORS(app)
 #
 session = boto3.Session() #sets the profile name to use for AWS credentials
 
@@ -43,7 +46,7 @@ def upload_file():
     # Save the file to a location on the server
     file.save('./data/' + file.filename)
     
-    with open(f"./data/{file.filename}") as file:
+    with open(f"./data/{file.filename}", encoding='utf-8') as file:
         context = file.read()
         print(context)
         print("working")
@@ -116,4 +119,4 @@ def setup():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=8080)
+    app.run(host="localhost", port=8080)

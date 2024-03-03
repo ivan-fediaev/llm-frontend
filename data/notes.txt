@@ -1,0 +1,21 @@
+Additionally, “classical” also connotes a description in which the effects of finite time-
+dependency are ignored. In this sense, thermodynamics resembles the field of statics from
+Newtonian mechanics. Recall Newton’s second law of motion, m d2
+x/dt2
+=
+P
+F, where m
+is the mass, x is the position vector, t is time, and F is the force vector. In the statics limit
+where
+P
+F = 0, inertial effects are ignored, as is time-dependency. Now, a Newtonian would
+consider dynamics to imply motion, and so would consider thermodynamics to imply the
+time-dependent motion of heat. So a Newtonian would be more inclined to call the subject
+of these notes “thermostatics.” However, if we return to the earlier Greek translation of
+dynamics as power, we are actually truer to the classical connotation of thermodynamics.
+For the fundamental interplay of thermodynamics is that between so-called thermal energy
+(as might be thought of when considering heat) and mechanical energy (as might be thought
+of when considering power, a work rate). More formally, we will take the definition
+• thermodynamics: the science that deals with heat and work and those properties of
+matter that relate to heat and work.
+One of the main goals of these notes will be to formalize the relationship between heat, work

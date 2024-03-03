@@ -77,17 +77,18 @@ const UploadPage = ({
     console.log("NEW DOCS", newDocs);
 
     const formData = new FormData();
-    formData.append('pdfFile', newDocs[0]);
-    otherProps.handleSequence(1); 
-    // axios.post('http://localhost:3000/api/upload', formData)
-    //   .then((response) => {
-    //     console.log('File uploaded successfully');
-    //     otherProps.handlePdfId(response.data.id)
-    //     otherProps.handleSequence(1); 
-    //   })
-    //   .catch((error) => {
-    //     console.error('Error uploading file:', error);
-    //   });
+    formData.append('file', newDocs[0]);
+    axios.post('http://localhost:8080/upload', formData)
+      .then((response) => {
+        console.log(response);
+        console.log('File uploaded successfully');
+        // otherProps.handlePdfId(response.data)
+        otherProps.handleSequence(1); 
+        otherProps.handleTopics(response.data);
+      })
+      .catch((error) => {
+        console.error('Error uploading file:', error);
+      });
     console.log("DOCUMENT SUBMITTED", event);
   };
 
