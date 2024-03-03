@@ -78,7 +78,7 @@ const UploadPage = ({
 
     const formData = new FormData();
     formData.append('file', newDocs[0]);
-    axios.post('http://localhost:8080/upload', formData)
+    axios.post('http://llm-tutor.ramit.ca/upload', formData)
       .then((response) => {
         console.log(response);
         console.log('File uploaded successfully');
