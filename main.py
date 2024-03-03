@@ -16,7 +16,7 @@ AWS_ACCESS_KEY_ID = os.environ["AWS_ACCESS_KEY_ID"]
 AWS_SECRET_ACCESS_KEY = os.environ["AWS_SECRET_ACCESS_KEY"]
 UPLOAD_FOLDER = "./data"
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
-context = ""
+global context
 
 # AWS_ACCESS_KEY_ID = "rHGojXd5axr5t1VzTQChE2VyqqZ32UVoI/Vt5SDS"
 # AWS_SECRET_ACCESS_KEY = "rHGojXd5axr5t1VzTQChE2VyqqZ32UVoI/Vt5SDS"
@@ -31,7 +31,6 @@ bedrock = session.client(
 #
 bedrock_model_id = "ai21.j2-ultra-v1" #set the foundation model
 
-prompt = "What is the largest city in New Hampshire?" #the prompt to send to the model
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
@@ -48,10 +47,9 @@ def upload_file():
     
     with open(f"./data/{file.filename}", encoding='utf-8') as file:
         context = file.read()
-        print(context)
         print("working")
         body = json.dumps({
-            "prompt": f"Please tell me the keywords of these notes and return them as single words answers in a comma delimited list without any numbers and absolutely no other information from the model, just the list: {context}", #AI21
+            "prompt": f"Please tell me the top 5 keywords that are one word answers of these notes and return them as single words answers in a comma delimited list without any numbers and absolutely no other information from the model, just the list: {context}", #AI21
             "maxTokens": 8191, 
             "temperature": 0, 
             "topP": 0.5, 
@@ -68,8 +66,8 @@ def upload_file():
         response_body = json.loads(response.get('body').read()) # read the response
 
         response_text = response_body.get("completions")[0].get("data").get("text")
-        res_list = response_text.split(",")
-        return res_list
+        context = response_text.split(",")
+        return response_text.split(",")[:5]
 
 
 
@@ -88,11 +86,15 @@ def login():
 @app.route('/prompt',methods = ['POST'])
 def prompt():
    if request.method == 'POST':
-      prompt = request.get_json()["prompt"]
-    
+      difficulty = request.get_json()["difficulty"]
+      question = request.get_json()["question"]
+
+      context = "Heat, Thermodynamics, Kinetic Energy, Brownian Motion, Heat Transfer"
+      prompt = f"Make {question} different total {difficulty} difficulty questions based on the following keywords: {context}. Do not include any more information from the reponse, just the questions based on the keywords."
+
       body = json.dumps({
             "prompt": prompt, #AI21
-            "maxTokens": 1024, 
+            "maxTokens": 8000, 
             "temperature": 0, 
             "topP": 0.5, 
             "stopSequences": [], 

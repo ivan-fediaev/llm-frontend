@@ -19,41 +19,3 @@ of when considering power, a work rate). More formally, we will take the definit
 • thermodynamics: the science that deals with heat and work and those properties of
 matter that relate to heat and work.
 One of the main goals of these notes will be to formalize the relationship between heat, work,
-and energy.
-We close this section by noting that the concept of energy has evolved through time, but
-has ancient origins. The word itself had its first recorded use by Aristotle.3
-His portrait,
-along with an image of the relevant section of an 1818 translation of his treatise, is depicted in
-Figs. 1.2. In the Greek, the word
-,
-ǫνǫ́ργǫια, “energeia,” connotes activity or operation. While
-the word was known to Aristotle, its modern usage was not; it was the English polymath
-Thomas Young who first used the word “energy,” consistent with any sort of modern usage,
-in this case kinetic energy.4
-A portrait of Young and an image of his text defining energy,
-in actuality kinetic energy, in modern terms are shown in Fig. 1.3.
-3
-Aristotle, ∼335 BC, The Rhetoric, Poetic, and Nicomachean Ethics, Book III, Ch. XI, English transla-
-tion by T. Taylor, 1818, Black, London, see pp. 242-243.
-4
-T. Young, 1807, Lectures on Natural Philosophy, William Savage, London, p. 52.
-CC BY-NC-ND. 02 March 2024, J. M. Powers.
-1.1. SOME SEMANTICS 13
-Figure 1.2: Aristotle (384 BC-322 BC), Greek philosopher who gives the first recorded use
-of the word “energy” and whose method of logic permeates classical thermodynamics; im-
-age from https://mathshistory.st-andrews.ac.uk/Biographies/Aristotle.html and
-an image of Aristotle’s usage of the word “energy” from his Nicomachean Ethics.
-Figure 1.3: Thomas Young (1773-1829), English natural philosopher; image from
-https://en.wikipedia.org/wiki/Thomas Young (scientist), and a reproduction of his
-more modern 1807 definition of (kinetic) energy.
-CC BY-NC-ND. 02 March 2024, J. M. Powers.
-14 CHAPTER 1. INTRODUCTION
-Finally, though she did not use the word “energy,” the notion of what is now known as
-kinetic energy being related to the square of velocity was first advanced by du Châtelet,5
-pictured in Fig. 1.4.
-Figure 1.4: Gabrielle Émilie Le Tonnelier de Breteuil, marquise du Châtelet (1706-1749),
-French physicist; image from https://en.wikipedia.org/wiki/Emilie du Chatelet.
-1.2 Historical milestones
-Thermodynamics has a long history; unfortunately, it was not blessed with the crispness of
-development that mechanics realized with Newton. In fact, its growth is filled with false
-steps, errors, and debate that continues to this day. Truesdell
