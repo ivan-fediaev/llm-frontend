@@ -1,0 +1,940 @@
+Chapter 1
+Introduction
+Read BS, Chapter 1
+1.1 Some semantics
+We introduce here classical thermodynamics. The word “thermo-dynamic,” used first by
+Thomson (later Lord Kelvin),1
+has Greek origin, and is translated2
+as the combination of
+• θǫ́ρµη, therme: heat, and
+• δύναµις, dynamis: power.
+An image of Thomson and his 1849 first use of the word is given in Fig. 1.1.
+Figure 1.1: William Thomson (Lord Kelvin) (1824-1907), Ulster-born Scottish scientist;
+image from https://mathshistory.st-andrews.ac.uk/Biographies/Thomson.html and
+image giving the first use of “thermo-dynamic” extracted from his 1849 work.
+The modifier “classical” is used to connote a description in which quantum mechanical
+effects, the molecular nature of matter, and the statistical nature of molecular behavior
+1
+W. Thomson (later Kelvin), 1849, “An account of Carnot’s theory of the motive power of heat; with
+numerical results deduced from Regnault’s experiments on steam,” Transactions of the Royal Society of
+Edinburgh, 16:541-574. See also C. W. Smith, 1977, “William Thomson and the creation of thermodynamics:
+1840-1855,” Archive for History of Exact Sciences, 16(3): 231-288.
+2
+All Greek spellings and etymologies are drawn from the Oxford English Dictionary, 2nd edition, 1989.
+11
+12 CHAPTER 1. INTRODUCTION
+are not considered in any detail. These effects will not be completely ignored; however,
+they will be lumped into simple averaged models that are valid on the macroscale. As an
+example, for ordinary gases, our classical thermodynamics will be valid for systems whose
+characteristic length scale is larger than the mean free path between molecular collisions.
+For air at atmospheric density, this about 0.1 µm = 10−7
+m).
+Additionally, “classical” also connotes a description in which the effects of finite time-
+dependency are ignored. In this sense, thermodynamics resembles the field of statics from
+Newtonian mechanics. Recall Newton’s second law of motion, m d2
+x/dt2
+=
+P
+F, where m
+is the mass, x is the position vector, t is time, and F is the force vector. In the statics limit
+where
+P
+F = 0, inertial effects are ignored, as is time-dependency. Now, a Newtonian would
+consider dynamics to imply motion, and so would consider thermodynamics to imply the
+time-dependent motion of heat. So a Newtonian would be more inclined to call the subject
+of these notes “thermostatics.” However, if we return to the earlier Greek translation of
+dynamics as power, we are actually truer to the classical connotation of thermodynamics.
+For the fundamental interplay of thermodynamics is that between so-called thermal energy
+(as might be thought of when considering heat) and mechanical energy (as might be thought
+of when considering power, a work rate). More formally, we will take the definition
+• thermodynamics: the science that deals with heat and work and those properties of
+matter that relate to heat and work.
+One of the main goals of these notes will be to formalize the relationship between heat, work,
+and energy.
+We close this section by noting that the concept of energy has evolved through time, but
+has ancient origins. The word itself had its first recorded use by Aristotle.3
+His portrait,
+along with an image of the relevant section of an 1818 translation of his treatise, is depicted in
+Figs. 1.2. In the Greek, the word
+,
+ǫνǫ́ργǫια, “energeia,” connotes activity or operation. While
+the word was known to Aristotle, its modern usage was not; it was the English polymath
+Thomas Young who first used the word “energy,” consistent with any sort of modern usage,
+in this case kinetic energy.4
+A portrait of Young and an image of his text defining energy,
+in actuality kinetic energy, in modern terms are shown in Fig. 1.3.
+3
+Aristotle, ∼335 BC, The Rhetoric, Poetic, and Nicomachean Ethics, Book III, Ch. XI, English transla-
+tion by T. Taylor, 1818, Black, London, see pp. 242-243.
+4
+T. Young, 1807, Lectures on Natural Philosophy, William Savage, London, p. 52.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+1.1. SOME SEMANTICS 13
+Figure 1.2: Aristotle (384 BC-322 BC), Greek philosopher who gives the first recorded use
+of the word “energy” and whose method of logic permeates classical thermodynamics; im-
+age from https://mathshistory.st-andrews.ac.uk/Biographies/Aristotle.html and
+an image of Aristotle’s usage of the word “energy” from his Nicomachean Ethics.
+Figure 1.3: Thomas Young (1773-1829), English natural philosopher; image from
+https://en.wikipedia.org/wiki/Thomas Young (scientist), and a reproduction of his
+more modern 1807 definition of (kinetic) energy.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+14 CHAPTER 1. INTRODUCTION
+Finally, though she did not use the word “energy,” the notion of what is now known as
+kinetic energy being related to the square of velocity was first advanced by du Châtelet,5
+pictured in Fig. 1.4.
+Figure 1.4: Gabrielle Émilie Le Tonnelier de Breteuil, marquise du Châtelet (1706-1749),
+French physicist; image from https://en.wikipedia.org/wiki/Emilie du Chatelet.
+1.2 Historical milestones
+Thermodynamics has a long history; unfortunately, it was not blessed with the crispness of
+development that mechanics realized with Newton. In fact, its growth is filled with false
+steps, errors, and debate that continues to this day. Truesdell6
+and Müller7,8
+summarize the
+development in their idiosyncratic histories. Some of the milestones of its development are
+given here:
+• first century AD: Hero of Alexandria documents many early thermal engines.
+• 1593: Galileo develops a water thermometer.
+• 1650: Otto von Guericke designs and builds the first vacuum pump.
+• 1662: Robert Boyle develops his law for isothermal ideal gases.
+5
+É. du Châtelet, 1740, Institutions de Physique, Chez Prault, Paris.
+6
+C. Truesdell, 1980, The Tragicomical History of Thermodynamics, 1822-1854, Springer, New York.
+7
+I. Müller, 2007, A History of Thermodynamics: the Doctrine of Energy and Entropy, Springer, Berlin.
+8
+I. Müller and W. H. Müller, 2009, Fundamentals of Thermodynamics and Applications with Historical
+Annotations and Many Citations from Avogadro to Zermelo, Springer, Berlin.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+1.2. HISTORICAL MILESTONES 15
+• 1679: Denis Papin develops his steam digester, forerunner to the steam engine.
+• 1687: Isaac Newton publishes PhilosophiæNaturalis Principia Mathematica.
+• 1698: Thomas Savery patents an early steam engine.
+• 1710: Thomas Newcomen creates a more practical steam engine.
+• 1760s: Joseph Black develops calorimetry.
+• 1780s: James Watt improves the steam engine.
+• 1798: Benjamin Thompson (Count Rumford) considers the mechanical equivalent of
+heat from cannon boring experiments.
+• 1824: Nicolas Lèonard Sadi Carnot discusses idealized heat engines.
+• 1840: Germain Henri Hess considers an early version of the first law of thermodynamics
+for work-free chemical reactions.
+• 1840s: Julius Robert von Mayer relates heat and work.
+• 1840s: James Prescott Joule relates heat and work.
+• 1847: Hermann von Helmholtz publishes his theory of energy conservation.
+• 1848: William Thomson (Lord Kelvin) postulates an absolute zero of temperature.
+• 1850: Rudolf Julius Emanuel Clausius formalizes the second law of thermodynamics.
+• 1865: Clausius introduces the concept of entropy.
+• 1871: James Clerk Maxwell develops the Maxwell relations.
+• 1870s: Josiah Willard Gibbs further formalizes mathematical thermodynamics.
+• 1870s: Maxwell and Ludwig Boltzmann develop statistical thermodynamics.
+• 1889: Gibbs develops statistical mechanics, giving underlying foundations for classical
+and statistical thermodynamics.
+• 1909: Constantin Carathéodory publishes a rigorous axiomatic formulation of the laws
+of thermodynamics.
+• 1931: Lars Onsager advances non-equilibrium thermodynamics with his reciprocity
+relations.
+Much development of the twentieth century was recognized by the Nobel prize, including
+that of Nobel laureates
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+16 CHAPTER 1. INTRODUCTION
+• Jacobus Henricus van’t Hoff (1901),
+• Johannes van der Waals (1910),
+• Heike Kamerlingh Onnes (1913),
+• Max Planck (1918),
+• Walther Nernst (1920),
+• Albert Einstein (1921),
+• Erwin Schrödinger (1933),
+• Enrico Fermi (1938),
+• Percy Bridgman (1946),
+• William Giauque (1949),
+• Lars Onsager (1968),
+• Ilya Prigogine (1977), and
+• Kenneth Wilson (1982).
+Strictly speaking, Newton did not consider the subject matter of thermodynamics. How-
+ever, much of his work is concerned with energy. His theories are appropriate only for
+mechanical energy. The notion that thermal energy existed and that it could be equivalent
+to mechanical energy was not part of Newtonian mechanics. However, temperature was
+known to Newton, as was Boyle’s law. When he tried to apply his theories to problems
+of thermodynamics, such as calculation of the speed of sound in air, they notably failed.
+This will be discussed at the conclusion of these notes in Ch. 9.8. The reason for the failure
+required consideration of the yet-to-be-developed second law of thermodynamics.
+1.3 Philosophy of science note
+As with science in general, thermodynamics is based on empirical observation. Moreover, it
+is important that those observations be repeatable. A few postulates, also known as axioms,
+will serve as the foundation of our science. Following Occam’s razor,9
+we shall seek as few
+axioms as possible to describe this behavior. We will supplement these axioms with some
+necessary definitions to describe nature. Then we shall use our reason to deduce from the
+axioms and definitions certain theorems of engineering relevance.
+This approach, that has its foundations in Aristotelian methods, is not unlike the ap-
+proach taken by Euclid to geometry, Aquinas to theology, or Newton to mechanics. A
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+1.4. SOME PRACTICAL APPLICATIONS 17
+Figure 1.5: Euclid of Alexandria (∼ 325 BC- ∼265 BC), Greek mathematician whose rational
+exposition of geometry formed a model for how to present classical thermodynamics; image
+from https://mathshistory.st-andrews.ac.uk/Biographies/Euclid.html.
+depiction of Euclid is given in Fig. 1.5. Consider for example that Euclid defined certain en-
+tities such as points, lines, and planes, then adopted certain axioms such as parallel lines do
+not meet at infinity, and went on to prove a variety of theorems. Classical thermodynamics
+follows the same approach. Concepts such as system and process are defined, and axioms,
+known as the laws of thermodynamics, are proposed in such a way that the minimum amount
+of theory is able to explain the maximum amount of data.
+Now, in some sense science can never be formally proved; it can only be disproved.
+We retain our axioms as long as they are useful. When faced with empirical facts that
+unambiguously contradict our axioms, we are required to throw away our axioms and develop
+new ones. For example, in physics, the Michelson-Morley experiment forced Einstein to
+abandon the axioms of Euclid, Newton, and Clausius for his theory of general relativity.
+It turns out that we can still use these axioms, as long as we are considering problems in
+which the speed of our reference frame is far less than the speed of light. In an example
+from biology that is the topic of a popular science book,10
+it was noted that it was once
+believed that all swans were white. This working hypothesis was perfectly acceptable until
+1697, when a black swan was discovered in Australia. Thus, the “theory” (though it is not
+a highly profound theory) that all swans were white was unambiguously discredited. It will
+be briefly seen in Ch. 6.10 that non-classical thermodynamics actually has a deep relation
+to probability and statistics and information, a topic that transcends thermodynamics.
+1.4 Some practical applications
+It turns out that the classical approach to thermodynamics has had success in guiding the
+engineering of devices. People have been building mechanical devices based on thermal
+9
+from William of Occam, (c. 1288-c. 1348) English Franciscan friar and philosopher.
+10
+N. N. Taleb, 2007, The Black Swan: The Impact of the Highly Improbable, Random House, New York.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+18 CHAPTER 1. INTRODUCTION
+energy inputs for centuries, without the benefit of a cleanly enunciated theory. Famously,
+Hero of Alexandria, perhaps the first recognized thermal engineer, documented a variety of
+devices. These include an early steam engine11
+known as the æolipile, pumps, and a device
+to use fire to open doors. Hero and a nineteenth century rendition of his steam engine are
+shown in Fig. 1.6. While Hero’s contributions are a matter of some speculation inspired by
+Figure 1.6: Hero of Alexandria (10-70 AD), Greek engineer and mathematician who devised
+some early ways to convert thermal energy into mechanical energy, and his æolipile; images
+from https://en.wikipedia.org/wiki/Hero of Alexandria.
+ancient artistry, the much later works of Denis Papin (1647-1712) are more certain. Papin
+invented the so-called steam digester, that anticipated both the pressure cooker and the
+steam engine. The device used steam power to lift a weight. Depictions of Papin and his
+device are found in Fig. 1.7. Significant improvements were led by James Watt (1736-1819)
+of Scotland. An image of Watt and one of his engines is shown in Fig. 1.8.
+11
+P. Keyser, 1990, “A new look at Heron’s steam engine,” Archive for History of Exact Sciences, 44(2):
+107-124.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+1.4. SOME PRACTICAL APPLICATIONS 19
+Figure 1.7: French-born inventor Denis Papin (1647-1712) and his steam digester; images
+from https://en.wikipedia.org/wiki/Denis Papin.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+20 CHAPTER 1. INTRODUCTION
+a) b)
+Figure 1.8: a) Scottish engineer James Watt (1736-1819); image from
+https://en.wikipedia.org/wiki/James Watt, b) Sketch of one of Watt’s steam en-
+gines; image from W. J. M. Rankine, 1859, A Manual of the Steam Engine and Other Prime
+Movers, First Edition, Griffin, London.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+1.4. SOME PRACTICAL APPLICATIONS 21
+These engines were adopted for transportation. In 1807, the American engineer Robert
+Fulton (1765-1815) was the first to use steam power in a commercial nautical vessel, the
+Clermont, that was powered by a Boulton and Watt steam engine. Soon after, in 1811 in
+Scotland, the first European commercial steam vessel, the Comet, embarked. We have a
+sketch of the Comet and its steam power plant in Fig. 1.9. On land, steam power soon
+Figure 1.9: Sketch of the Comet and its steam engine; image from W. J. M. Rankine, 1859,
+A Manual of the Steam Engine and Other Prime Movers, First Edition, Griffin, London.
+enabled efficient rail transportation. A famous early steam locomotive was the English
+engineer Robert Stephenson’s (1803-1859) Rocket, sketched in Fig. 1.10.
+Figure 1.10: Sketch of the Rocket; image from W. J. M. Rankine, 1859, A Manual of the
+Steam Engine and Other Prime Movers, First Edition, Griffin, London.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+22 CHAPTER 1. INTRODUCTION
+The effect of steam power, a contribution driven by engineers, on the development of
+the world remains remarkable. It is what is commonly known as a disruptive technology as
+its widespread adoption displaced other well-established technologies. While it is difficult to
+quantify historical pronouncements, it is likely that the effect on the world was even more
+profound than the introduction of networked computers in the late twentieth century. In
+short, steam power was the linchpin for the industrial revolution. Steam power replaced
+animal power as a prime mover throughout much of the world and, where implemented,
+enabled rapid development of broad economic segments: mining, manufacturing, land and
+sea transportation, among others. Large scale population movements ensued as opportunities
+in urban manufacturing centers made industrial work more appealing than agricultural work.
+Certainly, changes precipitated by the advent of steam power were contributing factors in
+widespread social unrest in the nineteenth century, ranging from labor strife to war between
+nation states.
+Some more modern devices, listed here, are relevant to thermodynamics:
+• simple steam power plant,
+• fuel cells,
+• vapor-compression refrigeration cycle,
+• air separation plant,
+• the gas turbine, and
+• the chemical rocket engine.
+As an example, the main power plant of the University of Notre Dame, depicted in Fig. 1.11,
+is based on a steam power cycle that will be a topic of study in this course. Additionally,
+one might consider the following topics to have thermodynamic relevance:
+• gasoline and Diesel engines,
+• the weather,
+• cooking,
+• heating, ventilation, air conditioning, and refrigeration (HVAC&R), or
+• materials processing (metals, polymers, etc.).
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+1.4. SOME PRACTICAL APPLICATIONS 23
+Figure 1.11: University of Notre Dame Power Plant; image from Matt Cashore, University
+of Notre Dame.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+24 CHAPTER 1. INTRODUCTION
+1.5 Example to illustrate homework solution style
+Proper technical communication is important for engineering. Here is an example of how
+one might construct a homework solution. We take an example involving mechanical energy
+from introductory physics:
+Example 1.1
+A mass of m = 1 kg is initially at rest and is dropped from a height of y = yo = 10 m above the
+ground, where gravitational acceleration g = 9.81 m/s2
+. Neglect drag forces. Find the time to reach
+the ground, the kinetic energy as a function of time, and the potential energy as a function of time.
+Plot key results.
+The scenario is sketched in Fig. 1.12. The principle governing the motion of the body is Newton’s
+g = 9.81 m/s2
+m = 1 kg
+yo
+= 10 m
+y = 0 m
+y
+Figure 1.12: Sketch of problem for particle motion in a gravitational field.
+second law, embodied in a second order differential equation. The only force is the gravitational force
+acting in the negative y direction. This gives the equation
+m
+d2
+y
+dt2
+= −mg. (1.1)
+Note the mass m cancels here, giving
+d2
+y
+dt2
+= −g. (1.2)
+Integrate once to get
+dy
+dt
+= −gt + C1, (1.3)
+where C1 is a constant. Integrate a second time to get
+y(t) = −
+1
+2
+gt2
++ C1t + C2. (1.4)
+We need two initial conditions for this second order ordinary differential equation. At time t = 0, we
+know from the problem statement that
+y(0) = yo,
+dy
+dt
+(0) = 0. (1.5)
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+1.5. EXAMPLE TO ILLUSTRATE HOMEWORK SOLUTION STYLE 25
+Applying the first initial condition, we get
+yo = −
+1
+2
+g(0)2
++ C1(0) + C2 = C2. (1.6)
+Thus, we have
+y(t) = −
+1
+2
+gt2
++ C1t + yo. (1.7)
+Apply the second initial condition to get
+0 = −g(0) + C1 = C1. (1.8)
+Thus, we have
+y(t) = −
+1
+2
+gt2
++ yo. (1.9)
+For the velocity, we get
+dy
+dt
+= −gt. (1.10)
+When the mass reaches the ground, y = 0. Solving for the time when y = 0, we get
+0 = −
+1
+2
+gt2
++ yo, (1.11)
+1
+2
+gt2
+= yo, (1.12)
+t = ±
+r
+2yo
+g
+. (1.13)
+We are considering t going forward, so we take the positive root, giving
+t =
+r
+2yo
+g
+, (1.14)
+=
+s
+2(10 m)
+9.81 m
+s2
+, (1.15)
+= 1.43 s. (1.16)
+The kinetic energy, KE, is
+KE =
+1
+2
+m
+
+dy
+dt
+2
+, (1.17)
+=
+1
+2
+mg2
+t2
+. (1.18)
+The gravitational potential energy, PE, is
+PE = mgy, (1.19)
+= mgyo −
+1
+2
+mg2
+t2
+. (1.20)
+Note that
+KE + PE = mgyo, (1.21)
+that is a constant. Thus, mechanical energy is conserved here! By conserved, we mean it does not
+change.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+26 CHAPTER 1. INTRODUCTION
+Numerically, we have for y(t), KE(t), and PE(t),
+y(t) = −
+1
+2
+
+9.81
+m
+s2
+
+t2
++ (10 m), (1.22)
+= −
+
+4.904
+m
+s2
+
+t2
++ (10 m), (1.23)
+KE(t) =
+1
+2
+(1 kg)
+
+−
+
+9.81
+m
+s2
+
+t
+2
+, (1.24)
+=
+
+48.12
+kg m2
+s4
+
+t2
+, (1.25)
+=
+
+48.12
+kg m2
+s4
+J
+kg m2/s2
+
+t2
+, (1.26)
+=
+
+48.12
+J
+s2
+
+t2
+, (1.27)
+PE(t) = (1 kg)
+
+9.81
+m
+s2
+
+(10 m) −
+1
+2
+(1 kg)
+
+9.81
+m
+s2
+2
+t2
+, (1.28)
+= (98.1 J) −
+
+48.12
+J
+s2
+
+t2
+. (1.29)
+The position as a function of time is plotted in Fig. 1.13. The kinetic, potential, and total mechanical
+0.4 0.8 1.2
+t (s)
+2
+4
+6
+8
+10
+y (m)
+Figure 1.13: Position versus time for particle accelerating in a gravitational field with no
+drag force.
+energies as functions of time are plotted in Fig. 1.14. One can tell by inspection that as potential energy
+decreases, kinetic energy increases just as much, rendering the total mechanical energy to be constant.
+If we include drag forces, the total mechanical energy is not constant; in fact, it dissipates with
+time. We will omit the details, but if we include a simple drag force proportional to the particle velocity,
+we get the equations
+m
+d2
+y
+dt2
+= −b
+dy
+dt
+− mg, y(0) = yo,
+dy
+dt
+(t = 0) = 0. (1.30)
+Skipping the details of calculation, if we take b = 0.1 N s/m, and all other parameters as before, we
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+1.5. EXAMPLE TO ILLUSTRATE HOMEWORK SOLUTION STYLE 27
+0.4 0.8 1.2
+t (s)
+20
+40
+60
+80
+100
+energy (J)
+total mechanical energy
+potential energy
+kinetic energy
+Figure 1.14: KE(t), PE(t) and total mechanical energy for a particle accelerating in a
+gravitational field with no drag force.
+find
+y(t) = yo +
+gm2
+b2
+
+1 − exp
+
+−bt
+m
+
+−
+mg
+b
+t, (1.31)
+= (991 m) − (981 m) exp
+
+−t
+10 s
+
+−
+
+98.1
+1
+s
+
+t, (1.32)
+KE(t) + PE(t) = (14533.5 J) + (4811.8 J) exp
+
+−t
+20 s
+
+− (19247.2 J) exp
+
+−t
+10 s
+
+−
+
+962.361
+1
+s
+
+t.
+(1.33)
+The kinetic, potential, and total mechanical energies as functions of time are plotted in Fig. 1.15.
+0.4 0.8 1.2
+t (s)
+20
+40
+60
+80
+100
+energy (J)
+kinetic energy
+potential energy
+total mechanical energy
+Figure 1.15: KE(t), PE(t) and total mechanical energy for a particle accelerating in a
+gravitational field in the presence of a drag force.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+28 CHAPTER 1. INTRODUCTION
+When drag forces are included, we begin with the same amount of total mechanical energy and
+potential energy. At the end of the calculation, we have the same amount of potential energy (zero), but
+less kinetic energy and less total mechanical energy. Where did this energy go? In fact, it is transformed
+into another form of energy, thermal energy, that is not accounted for in Newtonian mechanics. When
+we properly account for thermal energy, we will again impose a conservation of total energy, one of the
+main topics of this course, to be considered at the outset of Chapter 3.
+We close this section with an image of Newton in Fig. 1.16, who began to study issues
+related to thermodynamics, and whose scientific methods imbue its development.
+Figure 1.16: English genius Sir Isaac Newton (1643-1727), in a
+1702 portrait by Sir Godfrey Kneller, whose classical mechanics
+broadly influenced the development of thermodynamics; image from
+https://commons.wikimedia.org/wiki/File:Sir Isaac Newton by Sir Godfrey Kneller, Bt.jpg.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+1.6. THERMODYNAMIC SYSTEM AND CONTROL VOLUME 29
+1.6 Thermodynamic system and control volume
+We take the following definitions:
+• Thermodynamic system: a quantity of fixed mass under investigation,
+• Surroundings: everything external to the system,
+• System boundary: interface separating system and surroundings, and
+• Universe: combination of system and surroundings.
+The system, surroundings, and system boundary for a universe are shown for a potato-
+shaped system in Fig. 1.17. We allow two important interactions between the system and
+system
+surroundings
+system boundary
+heat in
+work out
+universe
+Figure 1.17: Sketch of a universe composed of a system, its surroundings, and the system
+boundary.
+its surroundings:
+• heat can cross into the system (our potato can get hot), and
+• work can cross out of the system (our potato can expand).
+Now, the system boundaries can change, for example the potato might expand on heating,
+but we can still distinguish the system and the surroundings. We now define an
+• isolated system: a system that is not influenced by its surroundings.
+Note that a potato with thick and inelastic skin will be isolated. We distinguish the system,
+that has constant mass, but possible variable volume, from the
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+30 CHAPTER 1. INTRODUCTION
+• Control Volume: fixed volume over which mass can pass in and out of its boundary.
+The control volume is bounded by the
+• Control Surface: boundary of the control volume.
+The mass within a control volume may or may not be constant. If there is fluid flow in
+and out there may or may not be accumulation of mass within the control volume. We will
+mainly study cases in which there is no accumulation, but this need not be the case. A
+sketch contrasting scenarios in which a fluid is compressed in which the system approach
+would be used against those where the control volume approach would be used is shown in
+Fig. 1.18. In summary,
+piston-cylinder compressor
+system approach control volume approach
+system
+flow in flow out
+control
+volume
+Figure 1.18: Comparison of system (fixed mass) and control volume (fixed volume) ap-
+proaches in thermodynamics for two common scenarios: piston-cylinder compression (left)
+and compression in a flow device whose details are not shown (right).
+• system → fixed mass, closed, and
+• control volume → potentially variable mass, open.
+1.7 Macroscopic versus microscopic
+In principle, we could solve for the forces acting on every molecule and use Newton’s laws
+to determine the behavior of systems. This is difficult for even modestly sized systems.
+• If we had a volume of 1 m3
+of gas at atmospheric pressure and temperature, we would
+find that it was composed of 2.4 × 1025
+molecules.
+• We would need six equations of motion for each molecule, three for x, y, z, position,
+and three for u, v, w, velocity. This would require then a total of 1.4 × 1026
+differential
+equations to solve simultaneously.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+1.7. MACROSCOPIC VERSUS MICROSCOPIC 31
+• Even with our largest computers, this is impossible today. Note most desktop com-
+puters only can store roughly 109
+bytes of data in Random Access Memory (RAM).
+• We can however model the average behavior of the molecules statistically.
+• We can also use simple empirical relations that can be formally proved to capture the
+statistical nature of the flow. This will be our approach.
+• classical thermodynamics will treat macroscopic effects only and ignore individual
+molecular effects. For example molecules bouncing off a wall exchange momentum
+with the wall and induce pressure. We could use Newtonian mechanics for each par-
+ticle collision to calculate the net force on the wall. Instead our approach amounts to
+considering the average over space and time of the net effect of millions of collisions on
+a wall.
+We will in fact assume that matter can be modeled as a
+• Continuum: the limit in which discrete changes from molecule to molecule can be
+ignored and distances and times over which we are concerned are much larger than
+those of the molecular scale. This will enable the use of calculus in our continuum
+thermodynamics.
+The continuum theory can break down in important applications where the length and time
+scales are of comparable magnitude to molecular time scales. Important applications where
+the continuum assumption breaks down include
+• rarefied gas dynamics of the outer atmosphere (relevant for low orbit space vehicles),
+and
+• nano-scale heat transfer (relevant in cooling of computer chips).
+To get some idea of the scales involved, we note that for air at atmospheric pressure and
+temperature that the time and distance between molecular collisions provide the limits of
+the continuum. Under these conditions, we find for air
+• length > 0.1 µm, and
+• time > 0.1 ns,
+will be sufficient to use the continuum assumption. For denser gases, these cutoff scales are
+smaller. For lighter gases, these cutoff scales are larger. Details of collision theory can be
+found in advanced texts such as that of Vincenti and Kruger.12
+They show for air that the
+mean free path λ is well modeled by the following equation:
+λ =
+M
+√
+2πNρd2
+. (1.34)
+12
+W. G. Vincenti and C. H. Kruger, 1965, Introduction to Physical Gas Dynamics, John Wiley, New York,
+pp. 12-26.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+32 CHAPTER 1. INTRODUCTION
+Here, M is the molecular mass, N is Avogadro’s number, and d is the molecular diameter.
+Example 1.2
+Find the variation of mean free path with density for air.
+We turn to Vincenti and Kruger for numerical parameter values, that are seen to be M =
+28.9 kg/kmole, N = 6.02252 × 1023
+molecule/mole, d = 3.7 × 10−10
+m. Thus,
+λ =
+
+28.9 kg
+kmole
+
+1 kmole
+1000 mole
+
+√
+2π 6.02252 × 1023 molecule
+mole
+
+ρ (3.7 × 10−10 m)
+2 , (1.35)
+=
+7.8895 × 10−8 kg
+molecule m2
+ρ
+. (1.36)
+Note that the unit “molecule” is not really a dimension, but really is literally a “unit,” that may well
+be thought of as dimensionless. Thus, we can safely say
+λ =
+7.8895 × 10−8 kg
+m2
+ρ
+. (1.37)
+A plot of the variation of mean free path λ as a function of ρ is given in Fig. 1.19. Vincenti and Kruger
+10-7
+10-6
+10-5
+10-4
+10-8
+10-3
+10-2
+101
+100
+10-1
+Figure 1.19: Mean free path length, λ, as a function of density, ρ, for air.
+go on to consider an atmosphere with density of ρ = 1.288 kg/m3
+. For this density
+λ =
+7.8895 × 10−8 kg
+m2
+1.288 kg
+m3
+, (1.38)
+= 6.125 × 10−8
+m, (1.39)
+= 6.125 × 10−2
+µm. (1.40)
+Vincenti and Kruger also show the mean molecular speed under these conditions is roughly c = 500 m/s,
+so the mean time between collisions, τ, is
+τ ∼
+λ
+c
+=
+6.125 × 10−8
+m
+500 m
+s
+= 1.225 × 10−10
+s. (1.41)
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+1.8. PROPERTIES AND STATE OF A SUBSTANCE 33
+1.8 Properties and state of a substance
+We define
+• Phase: a quantity of matter that is homogeneous throughout, and
+• Phase Boundaries: interfaces between different phases.
+An example of a single phase is ice. Another single phase is liquid water. A glass of ice
+water is a two-phase mixture with the phase boundaries at the edge of each ice cube.
+We next define (circularly)
+• State: condition described by observable macroscopic properties, and
+• Property: quantity that only depends on the state of the system and is independent
+of the history of the system.
+Examples of properties include temperature and pressure. Two states are equivalent if they
+have the same properties. So if state 1 is defined by temperature T1 and pressure P1, and
+state 2 is defined is by temperature T2 and P2, state 1 is equivalent to state 2 iff (that is, if
+and only if) T1 = T2 and P1 = P2.
+There are two important classes of properties we consider in thermodynamics:
+• Extensive Property: a property that depends on the mass (or the extent) of the
+system, example extensive properties include mass, total volume, total energy, and
+• Intensive Property: a property that is independent of the mass of the system.
+Example intensive properties include temperature and pressure.
+In general, if you cut a system in half and re-measure its properties, intensive properties
+remain unchanged, while extensive properties are cut in half. Properties are defined for
+systems that are in
+• Equilibrium: state in which no spontaneous changes are observed with respect to
+time.
+We actually never totally achieve equilibrium, we only approximate it. It takes infinite time
+to achieve final equilibrium. In this class we will mainly be concerned with two types of
+equilibrium:
+• Mechanical equilibrium: characterized by equal pressure, and
+• Thermal equilibrium: characterized by equal temperature.
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+34 CHAPTER 1. INTRODUCTION
+A third type of equilibrium is chemical equilibrium, that we will not consider here, and is
+characterized by equal chemical potentials.
+A difficult conceptual challenge of thermodynamics is to reckon with two systems initially
+at their own equilibria, to bring them into contact so that they find a new equilibria. How to
+do this without consideration of time can be difficult. Another branch of thermodynamics,
+that we will consider only briefly in this course is
+• Non-equilibrium thermodynamics: branch of thermodynamics that considers sys-
+tems often far from equilibrium and the time-dynamics of their path to equilibrium.
+We will go to great effort to construct a thermodynamics that is generally not burdened
+with time. Occasionally we will bring time into our problems. Unfortunately, ignoring time
+occasionally requires some mental contortions, as seen in the next section.
+1.9 Processes and cycles
+Often systems undergo a
+• Change of State: implies one or more properties of the system has changed.
+How these properties would change outside of time is curiously outside the framework of
+equilibrium thermodynamics! The best way to think of them is that the changes are slow
+relative to the underlying molecular time scales. Fortunately, this will allow us to do a wide
+variety of problems of engineering relevance.
+We also define a
+• Process: a succession of changes of state.
+We assume our processes are all sufficiently slow such that each stage of the process is near
+equilibrium. Certain common processes are given special names, based on the Greek
+,
+ι
+′
+σoς,
+isos, meaning “equal”:
+• isothermal: constant temperature,
+• isobaric: constant pressure, and
+• isochoric: constant volume.
+An important notion in thermodynamics is that of a
+• cycle: series of processes that returns to the original state.
+The cycle is a thermodynamic “round trip.”
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+1.10. FUNDAMENTAL VARIABLES AND UNITS 35
+1.10 Fundamental variables and units
+We will mainly use the Système International (SI) units in this course. Occasionally, we
+will use the English Engineering system of units. As found in US National Institute of
+Standards and Technology (NIST) documents, the important fundamental base SI units,
+and corresponding English units are
+• length:
+– meter (m): the length of the path traveled by light in vacuum during a time
+interval of 1/299792458 of a second, and
+– foot (ft),
+• time:
+– second: (s) the duration of 9192631770 periods of the radiation corresponding to
+the transition between the two hyperfine levels of the ground state of the cesium
+133 atom, and
+– second: (s) English time units are identical to those of SI,
+• mass:
+– kilogram (kg): until May 2019 was defined as a mass equal to the mass of the
+international prototype of the kilogram (a platinum-iridium bar stored in Paris),
+roughly equal to the mass of one liter of water at standard temperature and
+pressure; its new definition is such that it is defined by taking the fixed numerical
+value of the Planck constant h to be 6.62607015 × 10−34
+when expressed in the
+unit J s, that is equal to kg m2
+s−1
+, and
+– pound mass: (lbm),
+• temperature: an equilibrium property that roughly measures how hot or cold an
+object is. Note our senses are poor judges of temperature. Consider snow and air in
+thermal equilibrium at 20 ◦
+F. Usually, it is possible to keep your bare hands warm for
+many hours at 20 ◦
+F if you are otherwise dressed warmly. However, if you place your
+bare hand in a snow bank you for a few minutes, you have a danger of frostbite. Yet
+both are at the same temperature. Why the difference in sense? Our bodies actually
+have more sensitivity to heat fluxes instead of temperature; heat leaves our body more
+rapidly when in contact with high density objects like snow relative to that of low
+density objects like air. More fundamental than common units such as ◦
+F are so-called
+absolute temperature units:
+– Kelvin: (K) until recently, the fraction 1/273.16 of the thermodynamic tem-
+perature of the triple point of water, and since May 2019 defined by taking the
+fixed numerical value of the Boltzmann constant kB to be 1.380649 × 10−23
+when
+expressed in the unit J K−1
+, that is equal to kg m2
+s−2
+K−1
+, and
+CC BY-NC-ND. 02 March 2024, J. M. Powers.
+36 CHAPTER 1. INTRODUCTION
+– Rankine: (◦
+R).
+1.11 Zeroth law of thermodynamics
+In this class we are taking the axiomatic approach. Recall that an axiom cannot be proven.
+It is a statement whose truth can be ascertained only by comparison with experiment.
+The axiom can be disproved by a single negative experiment. The so-called zeroth law of
+thermodynamics is the axiom that is probably most fundamental. It was formalized after
+the so-called first and second laws, and so it is called the zeroth law. Perhaps if a more
+fundamental axiom were discovered, it would be called the −1st
+law of thermodynamics?
+• Zeroth law of thermodynamics: When two bodies have equality of temperature
+with a third body, then they have equality of temperature.
+The origins of the zeroth law are murky. Sommerfeld13
+attributes the notion to R. H. Fowler
+in a 1931 review of a thermodynamics book. Fowler and Guggenheim explicitly introduce
+the term “zeroth law of thermodynamics” later.14
+The equivalent statement in mathematical
+logic is that if x = y and x = z, then y = z; this is in fact equivalent to the first of Euclid’s
+common notions: things that are equal to the same thing are also equal to each other.
+Definition of the zeroth law enables the use of a thermometer as a measurement device.
+A scale however needs to be defined. The old metric temperature scale, Celsius (◦
+C), was
+defined so that
+• 0 ◦
+C is the freezing point of water, and
+• 100 ◦
+C is the boiling point of water.
+These quantities varied with pressure however, so that different values would be obtained on
+top of a mountain versus down in the valley, and so this is not a good standard. Until May
+2019, the Celsius scale was defined to be nearly the same, but had
+• 0.01 ◦
+C as the so-called triple point of water, and
+• −273.15 ◦
+C as absolute zero in K.
+The triple point of water is defined at the state where three phases of water (solid, liquid,
+and gas) are observed to co-exist. Now it is defined in terms of the Boltzmann constant on
+a similar basis as the Kelvin scale, in such as way that the triple point of water remains,
+within the limits of experimental error, at 0.01 ◦
+C. The transformation between the absolute
+Kelvin scale and the Celsius scale is given by
