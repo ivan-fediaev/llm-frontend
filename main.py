@@ -68,7 +68,7 @@ def upload_file():
         response_text = response_body.get("completions")[0].get("data").get("text")
         context = response_text.split(",")
         return response_text.split(",")[:5]
-
+        
 
 
     return 'File uploaded successfully'
