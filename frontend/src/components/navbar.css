@@ -1,0 +1,23 @@
+.nav-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.nav-list{
+    /* flex flex-row gap-4 text-[20px] text-white
+     */
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    font-size: 20px;
+    color: white;
+    list-style: none;
+}
+
+.nav-list li{
+    cursor: pointer;
+}

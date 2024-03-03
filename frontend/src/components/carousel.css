@@ -1,0 +1,96 @@
+.quiz-container {
+    height: 80vh;
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items for better presentation */
+    padding: 0 100px;
+}
+
+.question-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 80%; /* Adjusted width for better readability */
+    border: 1px solid #646cff;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 10px 0 #646cff;
+    padding: 20px;
+}
+
+.options, .option {
+    display: flex;
+    padding: 10px;
+    font-size: large;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; /* Ensure option buttons use full container width */
+    border-radius: 5px;
+    gap: 5px;
+    cursor: pointer; /* Make it clear options are clickable */
+}
+
+.selected-option {
+    background-color: #646cff;
+    color: white;
+}
+
+.correct-option {
+    border: 2px solid green; /* Highlight correct options */
+}
+
+.explanation {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f0f0f0; /* Light background for explanations */
+    border-left: 3px solid #646cff; /* Accent border */
+    font-style: italic;
+}
+
+.timer {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px; /* Add some space above the quiz */
+}
+
+.grade-percentage {
+    font-size: 24px;
+    color: white;
+    margin: 20px 0; /* Visible before or after the quiz */
+    font-weight: bold;
+}
+
+/* Additional styles for modal and buttons */
+.modal-button-container button {
+    padding: 10px 20px; /* Increase button padding for better clickability */
+    margin: 0 10px; /* Space out buttons */
+    border: none;
+    cursor: pointer;
+    font-size: large;
+}
+
+.bg-green-500, .bg-red-500 {
+    color: white; /* Ensure text is white for visibility */
+    border-radius: 5px; /* Rounded corners for buttons */
+}
+
+.bg-green-500 {
+    background-color: #4CAF50; /* Green color */
+}
+
+.bg-red-500 {
+    background-color: #f44336; /* Red color */
+}
+
+.grade-button{
+    padding: 10px 20px;
+    margin: 20px;
+    box-shadow: 0 0 10px 0 #646cff;
+    cursor: pointer;
+    font-size: large;
+    border-radius: 5px;
+    background-color: #646cff;
+    color: white;
+}
