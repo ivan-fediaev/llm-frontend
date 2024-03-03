@@ -1,12 +1,12 @@
 import os
 import json
 import boto3
-from flask import Flask, flash, request, redirect, url_for
+from flask import Flask, flash, request, redirect, url_for, send_from_directory
 from dotenv import load_dotenv
 load_dotenv()
 from flask_cors import CORS
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="build", static_url_path="/")
 CORS(app)
 #
 session = boto3.Session() #sets the profile name to use for AWS credentials
@@ -31,6 +31,11 @@ bedrock = session.client(
 #
 bedrock_model_id = "ai21.j2-ultra-v1" #set the foundation model
 
+
+# Serve React App
+@app.route("/")
+def index():
+    return app.send_static_file("index.html")
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
