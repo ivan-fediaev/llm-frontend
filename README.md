@@ -1,1 +1,1 @@
-LLM code generator
+LLM quiz generator. 
